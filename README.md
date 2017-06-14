@@ -20,3 +20,7 @@ devtools::install_github("o2r-project/containerit")
   * write gorbachev.yaml with latest docker to allow Gorbachev CI system to run report
   * build report in the new docker to test reproducibility
 3. Set up Gorbachev CI for report on gorbachev.io
+
+## limitations
+
+Currently, texlive is not automatically added to the docker, so report is converted to .tex, but not rendered. Can do this locally, or add texlive (full) to render report within docker.
