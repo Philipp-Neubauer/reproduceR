@@ -5,4 +5,4 @@ set -ex
 Rscript -e "knitr::knit('this_report.Rnw')"
 
 # Gorbachev only
-cp this_report.pdf /output/
+cp this_report.tex /output/
