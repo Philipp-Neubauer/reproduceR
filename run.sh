@@ -1,8 +1,12 @@
 #!/bin/bash
-
 set -ex
 
-#docker build -t docker.dragonfly.co.nz/auckland_bivalves .
+ln -sf $(Rscript -e "cat(system.file(\"cli/container_it.R\", package=\"containeRit\"))") /usr/local/bin/containerit
 
-docker run --rm  -v $PWD/..:/work -w /work/report \
-  docker.dragonfly.co.nz/auckland_bivalves:v2 ./build.sh
+containerit file -f this_report.Rnw
+
+DATE=`date +%Y-%m-%d`
+docker build -t docker.dragonfly.co.nz/this_report:$DATE .
+docker push docker.dragonfly.co.nz/this_report:$DATE
+
+docker run --net host --rm -v $PWD:/payload -w /payload docker.dragonfly.co.nz/this_report:$DATE ./build.sh

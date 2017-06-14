@@ -1,0 +1,29 @@
+\documentclass[a4paper]{article}
+
+
+\begin{document}
+
+\title{Report title}
+
+\author{Philipp Neubauer, Dragonfly Data Science, Wellington, New Zealand}
+
+
+\maketitle
+\begin{abstract}
+
+
+
+\end{abstract}
+{\large Keywords:} 
+
+
+<<echo=FALSE>>=
+require(knitr)
+opts_chunk$set(warning=F, message = FALSE,echo=F,error=FALSE,cache=T, autodep=TRUE)
+@
+
+
+
+\section{Introduction}
+
+\end{document}
